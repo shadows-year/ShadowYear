@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHADOWYEAR | 存档</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Inter:wght@200;400;700&display=swap');
+
+        :root { --bg: #050505; }
+        body {
+            background-color: var(--bg);
+            color: #a3a3a3;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .serif { font-family: 'Cormorant Garamond', serif; }
+        
+        /* 响应式图片阴影悬停 */
+        .work-item {
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .work-item:hover {
+            transform: translateY(-8px);
+            color: white;
+        }
+
+        /* 隐藏滚动条 */
+        ::-webkit-scrollbar { width: 0px; }
+
+        /* 简单的入场动画 */
+        .fade-up {
+            animation: fadeUp 1.5s ease forwards;
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="selection:bg-white selection:text-black">
+
+    <nav class="fixed top-0 w-full p-6 md:p-10 flex justify-between items-center z-50 mix-blend-difference">
+        <div class="text-white font-bold tracking-[0.2em] text-sm uppercase">ShadowYear</div>
+        <div class="flex space-x-6 md:space-x-10 text-[10px] uppercase tracking-[0.3em]">
+            <a href="#gallery" class="hover:text-white transition">Portfolio</a>
+            <a href="#writing" class="hover:text-white transition">Journal</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-6">
+        
+        <section class="h-screen flex flex-col justify-center items-start fade-up">
+            <h1 class="text-[18vw] md:text-[10vw] text-white font-bold leading-[0.8] tracking-tighter shadow-2xl">
+                SHADOW<br><span class="serif italic font-light opacity-30">ARCHIVE.</span>
+            </h1>
+            <p class="mt-8 text-xs md:text-sm max-w-xs text-neutral-600 leading-relaxed uppercase tracking-widest">
+                展示作品 / 深度写作 / 视觉存档
+            </p>
+        </section>
+
+        <section id="gallery" class="py-20">
+            <h2 class="text-[10px] uppercase tracking-[0.5em] text-neutral-800 mb-12 italic border-b border-neutral-900 pb-4">Selected Works</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+                
+                <div class="work-item group cursor-pointer">
+                    <div class="aspect-[4/5] bg-neutral-900 overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-[10px] tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">IMAGE_01</div>
+                 <img
+src="images/1.jpg" 
+                             alt="Work" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-all duration-1000 grayscale">
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-xl serif italic">光影的几何</h3>
+                        <p class="text-[9px] uppercase tracking-widest mt-1 text-neutral-600">Photography / 2026</p>
+                    </div>
+                </div>
+
+                <div class="work-item group cursor-pointer md:mt-32">
+                    <div class="aspect-[4/5] bg-neutral-900 overflow-hidden relative">
+                        <div class="absolute inset-0 flex items-center justify-center text-[10px] tracking-widest opacity-20 group-hover:opacity-100 transition-opacity">IMAGE_02</div>
+                        <img 
+src="images/2.jpg" 
+                             alt="Work" class="w-full h-full object-cover opacity-40 group-hover:opacity-100 transition-all duration-1000 grayscale">
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-xl serif italic">数字寂静</h3>
+                        <p class="text-[9px] uppercase tracking-widest mt-1 text-neutral-600">Digital Art / 2025</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="writing" class="py-32">
+            <h2 class="text-[10px] uppercase tracking-[0.5em] text-neutral-800 mb-20 italic">Journal</h2>
+            <div class="space-y-12 max-w-2xl">
+                
+                <article class="group border-b border-neutral-900 pb-10 cursor-pointer hover:border-white transition-colors duration-500">
+                    <span class="text-[9px] font-mono text-neutral-700">2026.01.23</span>
+                    <h4 class="text-3xl md:text-5xl text-neutral-500 group-hover:text-white transition-colors mt-4 serif italic">为什么我们需要阴影</h4>
+                    <p class="mt-6 text-sm leading-relaxed hidden group-hover:block transition-all italic">
+                        在过度饱和的世界里，阴影提供了一种必要的沉默。
+                    </p>
+                </article>
+
+                <article class="group border-b border-neutral-900 pb-10 cursor-pointer hover:border-white transition-colors duration-500">
+                    <span class="text-[9px] font-mono text-neutral-700">2025.12.10</span>
+                    <h4 class="text-3xl md:text-5xl text-neutral-500 group-hover:text-white transition-colors mt-4 serif italic">极简主义与感官过载</h4>
+                </article>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="p-20 text-center border-t border-neutral-900 mt-20">
+        <p class="text-[9px] uppercase tracking-[1em] text-neutral-800">ShadowYear © 2026</p>
+    </footer>
+
+</body>
+</html>
